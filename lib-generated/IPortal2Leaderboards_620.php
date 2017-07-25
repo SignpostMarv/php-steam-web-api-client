@@ -10,7 +10,7 @@ class IPortal2Leaderboards_620 extends AbstractInterface
      *
      * @param string $leaderboardName The leaderboard name to fetch data for.
      */
-    public function GetBucketizedDataV1($leaderboardName)
+    public function GetBucketizedDataV1(string $leaderboardName)
     {
         return $this->_call(__METHOD__, 'GET', array('leaderboardName' => $leaderboardName));
     }

@@ -15,7 +15,7 @@ class IDOTA2Fantasy_205790 extends AbstractInterface
      * @param uint32 $SeriesID An optional filter for a specific series
      * @param uint32 $PlayerAccountID An optional filter for a specific player
      */
-    public function GetFantasyPlayerStatsV1($FantasyLeagueID, $StartTime = null, $EndTime = null, $matchid = null, $SeriesID = null, $PlayerAccountID = null)
+    public function GetFantasyPlayerStatsV1(string $FantasyLeagueID, string $StartTime = null, string $EndTime = null, string $matchid = null, string $SeriesID = null, string $PlayerAccountID = null)
     {
         return $this->_call(__METHOD__, 'GET', array('FantasyLeagueID' => $FantasyLeagueID, 'StartTime' => $StartTime, 'EndTime' => $EndTime, 'matchid' => $matchid, 'SeriesID' => $SeriesID, 'PlayerAccountID' => $PlayerAccountID));
     }
@@ -24,7 +24,7 @@ class IDOTA2Fantasy_205790 extends AbstractInterface
      *
      * @param uint32 $accountid The account ID to look up
      */
-    public function GetPlayerOfficialInfoV1($accountid)
+    public function GetPlayerOfficialInfoV1(string $accountid)
     {
         return $this->_call(__METHOD__, 'GET', array('accountid' => $accountid));
     }

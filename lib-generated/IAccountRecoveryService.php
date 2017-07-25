@@ -13,7 +13,7 @@ class IAccountRecoveryService extends AbstractInterface
      * @param string $shasentryfile
      * @param string $machineid
      */
-    public function ReportAccountRecoveryDataV1($loginuser_list, $install_config, $shasentryfile, $machineid)
+    public function ReportAccountRecoveryDataV1(string $loginuser_list, string $install_config, string $shasentryfile, string $machineid)
     {
         return $this->_call(__METHOD__, 'POST', array('loginuser_list' => $loginuser_list, 'install_config' => $install_config, 'shasentryfile' => $shasentryfile, 'machineid' => $machineid));
     }
@@ -22,7 +22,7 @@ class IAccountRecoveryService extends AbstractInterface
      *
      * @param string $requesthandle
      */
-    public function RetrieveAccountRecoveryDataV1($requesthandle)
+    public function RetrieveAccountRecoveryDataV1(string $requesthandle)
     {
         return $this->_call(__METHOD__, 'POST', array('requesthandle' => $requesthandle));
     }

@@ -11,7 +11,7 @@ class ISteamDirectory extends AbstractInterface
      * @param uint32 $cellid Client's Steam cell ID
      * @param uint32 $maxcount Max number of servers to return
      */
-    public function GetCMListV1($cellid, $maxcount = null)
+    public function GetCMListV1(string $cellid, string $maxcount = null)
     {
         return $this->_call(__METHOD__, 'GET', array('cellid' => $cellid, 'maxcount' => $maxcount));
     }

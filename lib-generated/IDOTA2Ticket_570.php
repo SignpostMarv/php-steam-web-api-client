@@ -11,7 +11,7 @@ class IDOTA2Ticket_570 extends AbstractInterface
      * @param uint32 $eventid Event ID
      * @param string $BadgeID The badge ID
      */
-    public function ClaimBadgeRewardV1($eventid, $BadgeID)
+    public function ClaimBadgeRewardV1(string $eventid, string $BadgeID)
     {
         return $this->_call(__METHOD__, 'GET', array('eventid' => $eventid, 'BadgeID' => $BadgeID));
     }
@@ -20,7 +20,7 @@ class IDOTA2Ticket_570 extends AbstractInterface
      *
      * @param string $BadgeID The badge ID
      */
-    public function GetSteamIDForBadgeIDV1($BadgeID)
+    public function GetSteamIDForBadgeIDV1(string $BadgeID)
     {
         return $this->_call(__METHOD__, 'GET', array('BadgeID' => $BadgeID));
     }
@@ -30,7 +30,7 @@ class IDOTA2Ticket_570 extends AbstractInterface
      * @param uint32 $eventid Event ID
      * @param uint64 $steamid The 64-bit Steam ID
      */
-    public function SetSteamAccountPurchasedV1($eventid, $steamid)
+    public function SetSteamAccountPurchasedV1(string $eventid, string $steamid)
     {
         return $this->_call(__METHOD__, 'POST', array('eventid' => $eventid, 'steamid' => $steamid));
     }
@@ -40,7 +40,7 @@ class IDOTA2Ticket_570 extends AbstractInterface
      * @param uint32 $eventid Event ID
      * @param uint64 $steamid The 64-bit Steam ID
      */
-    public function SteamAccountValidForEventV1($eventid, $steamid)
+    public function SteamAccountValidForEventV1(string $eventid, string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('eventid' => $eventid, 'steamid' => $steamid));
     }

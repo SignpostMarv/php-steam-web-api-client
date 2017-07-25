@@ -11,9 +11,11 @@ namespace Zyberspace\SteamWebApi;
 require_once('vendor/autoload.php');
 
 use Composer\Script\Event;
+use PhpParser\Builder\Param;
 use PhpParser\BuilderFactory;
 use PhpParser\PrettyPrinter;
 use PhpParser\Node;
+use RuntimeException;
 
 class InterfaceGenerator
 {
@@ -86,6 +88,32 @@ class InterfaceGenerator
                         $methodParam->setDefault(null);
                     }
                     $methodParams[] = $methodParam;
+                    $methodParamType = null;
+                    switch ($parameterApiDefinition->type) {
+                        case 'string':
+                        case 'uint64':
+                        case 'uint32':
+                        case 'rawbinary':
+                            $methodParamType = 'string';
+                        break;
+                        case 'int32':
+                            $methodParamType = 'integer';
+                        break;
+                        case 'bool':
+                            $methodParamType = 'bool';
+                        break;
+                        case '{message}':
+                            $methodParamType = 'array';
+                        break;
+                        default:
+                            throw new RuntimeException(
+                                'Unsupported type hint found! ' .
+                                $methodParamType
+                            );
+                    }
+                    if (is_null($methodParamType) === false) {
+                        $methodParam->setTypeHint($methodParamType);
+                    }
 
                     $arrayItems[] = new Node\Expr\ArrayItem(
                         new Node\Expr\Variable($parameterName),

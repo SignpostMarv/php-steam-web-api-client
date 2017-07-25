@@ -12,7 +12,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      * @param uint64 $steamid The SteamID of the user inventory
      * @param string $steamidkey Authentication obtained from the SteamID
      */
-    public function GetTournamentFantasyLineupV1($event, $steamid, $steamidkey)
+    public function GetTournamentFantasyLineupV1(string $event, string $steamid, string $steamidkey)
     {
         return $this->_call(__METHOD__, 'GET', array('event' => $event, 'steamid' => $steamid, 'steamidkey' => $steamidkey));
     }
@@ -23,7 +23,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      * @param uint64 $steamid The SteamID of the user inventory
      * @param string $steamidkey Authentication obtained from the SteamID
      */
-    public function GetTournamentItemsV1($event, $steamid, $steamidkey)
+    public function GetTournamentItemsV1(string $event, string $steamid, string $steamidkey)
     {
         return $this->_call(__METHOD__, 'GET', array('event' => $event, 'steamid' => $steamid, 'steamidkey' => $steamidkey));
     }
@@ -32,7 +32,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      *
      * @param uint32 $event The event ID
      */
-    public function GetTournamentLayoutV1($event)
+    public function GetTournamentLayoutV1(string $event)
     {
         return $this->_call(__METHOD__, 'GET', array('event' => $event));
     }
@@ -43,7 +43,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      * @param uint64 $steamid The SteamID of the user inventory
      * @param string $steamidkey Authentication obtained from the SteamID
      */
-    public function GetTournamentPredictionsV1($event, $steamid, $steamidkey)
+    public function GetTournamentPredictionsV1(string $event, string $steamid, string $steamidkey)
     {
         return $this->_call(__METHOD__, 'GET', array('event' => $event, 'steamid' => $steamid, 'steamidkey' => $steamidkey));
     }
@@ -65,7 +65,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      * @param uint32 $pickid4 PickID to select for the slot
      * @param uint64 $itemid4 ItemID to lock in for the pick
      */
-    public function UploadTournamentFantasyLineupV1($event, $steamid, $steamidkey, $sectionid, $pickid0, $itemid0, $pickid1, $itemid1, $pickid2, $itemid2, $pickid3, $itemid3, $pickid4, $itemid4)
+    public function UploadTournamentFantasyLineupV1(string $event, string $steamid, string $steamidkey, string $sectionid, string $pickid0, string $itemid0, string $pickid1, string $itemid1, string $pickid2, string $itemid2, string $pickid3, string $itemid3, string $pickid4, string $itemid4)
     {
         return $this->_call(__METHOD__, 'POST', array('event' => $event, 'steamid' => $steamid, 'steamidkey' => $steamidkey, 'sectionid' => $sectionid, 'pickid0' => $pickid0, 'itemid0' => $itemid0, 'pickid1' => $pickid1, 'itemid1' => $itemid1, 'pickid2' => $pickid2, 'itemid2' => $itemid2, 'pickid3' => $pickid3, 'itemid3' => $itemid3, 'pickid4' => $pickid4, 'itemid4' => $itemid4));
     }
@@ -81,7 +81,7 @@ class ICSGOTournaments_730 extends AbstractInterface
      * @param uint32 $pickid Pick ID to select
      * @param uint64 $itemid ItemID to lock in for the pick
      */
-    public function UploadTournamentPredictionsV1($event, $steamid, $steamidkey, $sectionid, $groupid, $index, $pickid, $itemid)
+    public function UploadTournamentPredictionsV1(string $event, string $steamid, string $steamidkey, string $sectionid, string $groupid, string $index, string $pickid, string $itemid)
     {
         return $this->_call(__METHOD__, 'POST', array('event' => $event, 'steamid' => $steamid, 'steamidkey' => $steamidkey, 'sectionid' => $sectionid, 'groupid' => $groupid, 'index' => $index, 'pickid' => $pickid, 'itemid' => $itemid));
     }

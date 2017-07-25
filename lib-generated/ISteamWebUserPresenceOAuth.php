@@ -16,7 +16,7 @@ class ISteamWebUserPresenceOAuth extends AbstractInterface
      * @param uint32 $secidletime How many seconds is client considering itself idle, e.g. screen is off
      * @param uint32 $use_accountids Boolean, 0 (default): return steamid_from in output, 1: return accountid_from
      */
-    public function PollStatusV1($steamid, $umqid, $message, $pollid = null, $sectimeout = null, $secidletime = null, $use_accountids = null)
+    public function PollStatusV1(string $steamid, string $umqid, string $message, string $pollid = null, string $sectimeout = null, string $secidletime = null, string $use_accountids = null)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid, 'umqid' => $umqid, 'message' => $message, 'pollid' => $pollid, 'sectimeout' => $sectimeout, 'secidletime' => $secidletime, 'use_accountids' => $use_accountids));
     }

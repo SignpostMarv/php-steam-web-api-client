@@ -21,7 +21,7 @@ class ICheatReportingService extends AbstractInterface
      * @param uint64 $cheat_param_1 cheat param 1
      * @param uint64 $cheat_param_2 cheat param 2
      */
-    public function ReportCheatDataV1($steamid, $appid, $pathandfilename, $webcheaturl, $time_now, $time_started, $time_stopped, $cheatname, $game_process_id, $cheat_process_id, $cheat_param_1, $cheat_param_2)
+    public function ReportCheatDataV1(string $steamid, string $appid, string $pathandfilename, string $webcheaturl, string $time_now, string $time_started, string $time_stopped, string $cheatname, string $game_process_id, string $cheat_process_id, string $cheat_param_1, string $cheat_param_2)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid, 'appid' => $appid, 'pathandfilename' => $pathandfilename, 'webcheaturl' => $webcheaturl, 'time_now' => $time_now, 'time_started' => $time_started, 'time_stopped' => $time_stopped, 'cheatname' => $cheatname, 'game_process_id' => $game_process_id, 'cheat_process_id' => $cheat_process_id, 'cheat_param_1' => $cheat_param_1, 'cheat_param_2' => $cheat_param_2));
     }

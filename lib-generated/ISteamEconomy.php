@@ -14,7 +14,7 @@ class ISteamEconomy extends AbstractInterface
      * @param uint64 $classid0 Class ID of the nth class.
      * @param uint64 $instanceid0 Instance ID of the nth class.
      */
-    public function GetAssetClassInfoV1($appid, $language = null, $class_count, $classid0, $instanceid0 = null)
+    public function GetAssetClassInfoV1(string $appid, string $language = null, string $class_count, string $classid0, string $instanceid0 = null)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'language' => $language, 'class_count' => $class_count, 'classid0' => $classid0, 'instanceid0' => $instanceid0));
     }
@@ -25,7 +25,7 @@ class ISteamEconomy extends AbstractInterface
      * @param string $currency The currency to filter for
      * @param string $language The user's local language
      */
-    public function GetAssetPricesV1($appid, $currency = null, $language = null)
+    public function GetAssetPricesV1(string $appid, string $currency = null, string $language = null)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'currency' => $currency, 'language' => $language));
     }

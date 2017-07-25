@@ -12,7 +12,7 @@ class ICSGOServers_730 extends AbstractInterface
      * @param string $gamemode What game mode is requested, possible values: competitive, casual
      * @param string $mapgroup What maps are requested, possible values: operation
      */
-    public function GetGameMapsPlaytimeV1($interval, $gamemode, $mapgroup)
+    public function GetGameMapsPlaytimeV1(string $interval, string $gamemode, string $mapgroup)
     {
         return $this->_call(__METHOD__, 'GET', array('interval' => $interval, 'gamemode' => $gamemode, 'mapgroup' => $mapgroup));
     }

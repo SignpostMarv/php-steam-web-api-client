@@ -11,7 +11,7 @@ class IDOTA2StreamSystem_205790 extends AbstractInterface
      * @param uint64 $broadcaster_steam_id 64-bit Steam ID of the broadcaster
      * @param uint32 $league_id LeagueID to use if we aren't in a lobby
      */
-    public function GetBroadcasterInfoV1($broadcaster_steam_id, $league_id = null)
+    public function GetBroadcasterInfoV1(string $broadcaster_steam_id, string $league_id = null)
     {
         return $this->_call(__METHOD__, 'GET', array('broadcaster_steam_id' => $broadcaster_steam_id, 'league_id' => $league_id));
     }

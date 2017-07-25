@@ -12,7 +12,7 @@ class IPlayerService extends AbstractInterface
      * @param string $ticket
      * @param {message} $play_sessions
      */
-    public function RecordOfflinePlaytimeV1($steamid, $ticket, $play_sessions)
+    public function RecordOfflinePlaytimeV1(string $steamid, string $ticket, array $play_sessions)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid, 'ticket' => $ticket, 'play_sessions' => $play_sessions));
     }
@@ -22,7 +22,7 @@ class IPlayerService extends AbstractInterface
      * @param uint64 $steamid The player we're asking about
      * @param uint32 $count The number of games to return (0/unset: all)
      */
-    public function GetRecentlyPlayedGamesV1($steamid, $count)
+    public function GetRecentlyPlayedGamesV1(string $steamid, string $count)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'count' => $count));
     }
@@ -34,7 +34,7 @@ class IPlayerService extends AbstractInterface
      * @param bool $include_played_free_games Free games are excluded by default.  If this is set, free games the user has played will be returned.
      * @param uint32 $appids_filter if set, restricts result set to the passed in apps
      */
-    public function GetOwnedGamesV1($steamid, $include_appinfo, $include_played_free_games, $appids_filter)
+    public function GetOwnedGamesV1(string $steamid, bool $include_appinfo, bool $include_played_free_games, string $appids_filter)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'include_appinfo' => $include_appinfo, 'include_played_free_games' => $include_played_free_games, 'appids_filter' => $appids_filter));
     }
@@ -43,7 +43,7 @@ class IPlayerService extends AbstractInterface
      *
      * @param uint64 $steamid The player we're asking about
      */
-    public function GetSteamLevelV1($steamid)
+    public function GetSteamLevelV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid));
     }
@@ -52,7 +52,7 @@ class IPlayerService extends AbstractInterface
      *
      * @param uint64 $steamid The player we're asking about
      */
-    public function GetBadgesV1($steamid)
+    public function GetBadgesV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid));
     }
@@ -62,7 +62,7 @@ class IPlayerService extends AbstractInterface
      * @param uint64 $steamid The player we're asking about
      * @param int32 $badgeid The badge we're asking about
      */
-    public function GetCommunityBadgeProgressV1($steamid, $badgeid)
+    public function GetCommunityBadgeProgressV1(string $steamid, integer $badgeid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'badgeid' => $badgeid));
     }
@@ -72,7 +72,7 @@ class IPlayerService extends AbstractInterface
      * @param uint64 $steamid The player we're asking about
      * @param uint32 $appid_playing The game player is currently playing
      */
-    public function IsPlayingSharedGameV1($steamid, $appid_playing)
+    public function IsPlayingSharedGameV1(string $steamid, string $appid_playing)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'appid_playing' => $appid_playing));
     }

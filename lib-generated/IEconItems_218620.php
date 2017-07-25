@@ -10,7 +10,7 @@ class IEconItems_218620 extends AbstractInterface
      *
      * @param uint64 $steamid The Steam ID to fetch items for
      */
-    public function GetPlayerItemsV1($steamid)
+    public function GetPlayerItemsV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid));
     }

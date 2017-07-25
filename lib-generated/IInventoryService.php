@@ -10,7 +10,7 @@ class IInventoryService extends AbstractInterface
      *
      * @param int32 $ecurrency
      */
-    public function GetPriceSheetV1($ecurrency)
+    public function GetPriceSheetV1(integer $ecurrency)
     {
         return $this->_call(__METHOD__, 'GET', array('ecurrency' => $ecurrency));
     }

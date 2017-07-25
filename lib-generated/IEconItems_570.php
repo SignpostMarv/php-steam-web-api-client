@@ -11,7 +11,7 @@ class IEconItems_570 extends AbstractInterface
      * @param uint64 $steamid The Steam ID to fetch items for
      * @param uint32 $class_id Return items equipped for this class id
      */
-    public function GetEquippedPlayerItemsV1($steamid, $class_id)
+    public function GetEquippedPlayerItemsV1(string $steamid, string $class_id)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'class_id' => $class_id));
     }
@@ -20,7 +20,7 @@ class IEconItems_570 extends AbstractInterface
      *
      * @param uint64 $steamid The Steam ID to fetch items for
      */
-    public function GetPlayerItemsV1($steamid)
+    public function GetPlayerItemsV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid));
     }
@@ -29,7 +29,7 @@ class IEconItems_570 extends AbstractInterface
      *
      * @param string $language The language to return the names in. Defaults to returning string keys.
      */
-    public function GetSchemaV1($language = null)
+    public function GetSchemaV1(string $language = null)
     {
         return $this->_call(__METHOD__, 'GET', array('language' => $language));
     }
@@ -46,7 +46,7 @@ class IEconItems_570 extends AbstractInterface
      *
      * @param string $language The language to results in.
      */
-    public function GetStoreMetaDataV1($language = null)
+    public function GetStoreMetaDataV1(string $language = null)
     {
         return $this->_call(__METHOD__, 'GET', array('language' => $language));
     }

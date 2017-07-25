@@ -10,7 +10,7 @@ class ISteamUserStats extends AbstractInterface
      *
      * @param uint64 $gameid GameID to retrieve the achievement percentages for
      */
-    public function GetGlobalAchievementPercentagesForAppV1($gameid)
+    public function GetGlobalAchievementPercentagesForAppV1(string $gameid)
     {
         return $this->_call(__METHOD__, 'GET', array('gameid' => $gameid));
     }
@@ -19,7 +19,7 @@ class ISteamUserStats extends AbstractInterface
      *
      * @param uint64 $gameid GameID to retrieve the achievement percentages for
      */
-    public function GetGlobalAchievementPercentagesForAppV2($gameid)
+    public function GetGlobalAchievementPercentagesForAppV2(string $gameid)
     {
         return $this->_call(__METHOD__, 'GET', array('gameid' => $gameid));
     }
@@ -32,7 +32,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint32 $startdate Start date for daily totals (unix epoch timestamp)
      * @param uint32 $enddate End date for daily totals (unix epoch timestamp)
      */
-    public function GetGlobalStatsForGameV1($appid, $count, $name, $startdate = null, $enddate = null)
+    public function GetGlobalStatsForGameV1(string $appid, string $count, string $name, string $startdate = null, string $enddate = null)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'count' => $count, 'name[0]' => $name, 'startdate' => $startdate, 'enddate' => $enddate));
     }
@@ -41,7 +41,7 @@ class ISteamUserStats extends AbstractInterface
      *
      * @param uint32 $appid AppID that we're getting user count for
      */
-    public function GetNumberOfCurrentPlayersV1($appid)
+    public function GetNumberOfCurrentPlayersV1(string $appid)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid));
     }
@@ -52,7 +52,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint32 $appid AppID to get achievements for
      * @param string $l Language to return strings for
      */
-    public function GetPlayerAchievementsV1($steamid, $appid, $l = null)
+    public function GetPlayerAchievementsV1(string $steamid, string $appid, string $l = null)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'appid' => $appid, 'l' => $l));
     }
@@ -62,7 +62,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint32 $appid appid of game
      * @param string $l localized langauge to return (english, french, etc.)
      */
-    public function GetSchemaForGameV1($appid, $l = null)
+    public function GetSchemaForGameV1(string $appid, string $l = null)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'l' => $l));
     }
@@ -72,7 +72,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint32 $appid appid of game
      * @param string $l localized language to return (english, french, etc.)
      */
-    public function GetSchemaForGameV2($appid, $l = null)
+    public function GetSchemaForGameV2(string $appid, string $l = null)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'l' => $l));
     }
@@ -82,7 +82,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint64 $steamid SteamID of user
      * @param uint32 $appid appid of game
      */
-    public function GetUserStatsForGameV1($steamid, $appid)
+    public function GetUserStatsForGameV1(string $steamid, string $appid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'appid' => $appid));
     }
@@ -92,7 +92,7 @@ class ISteamUserStats extends AbstractInterface
      * @param uint64 $steamid SteamID of user
      * @param uint32 $appid appid of game
      */
-    public function GetUserStatsForGameV2($steamid, $appid)
+    public function GetUserStatsForGameV2(string $steamid, string $appid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'appid' => $appid));
     }

@@ -11,7 +11,7 @@ class ITFPromos_440 extends AbstractInterface
      * @param uint64 $steamid The Steam ID to fetch items for
      * @param uint32 $promoid The promo ID to grant an item for
      */
-    public function GetItemIDV1($steamid, $promoid)
+    public function GetItemIDV1(string $steamid, string $promoid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid, 'promoid' => $promoid));
     }
@@ -21,7 +21,7 @@ class ITFPromos_440 extends AbstractInterface
      * @param uint64 $steamid The Steam ID to fetch items for
      * @param uint32 $promoid The promo ID to grant an item for
      */
-    public function GrantItemV1($steamid, $promoid)
+    public function GrantItemV1(string $steamid, string $promoid)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid, 'promoid' => $promoid));
     }

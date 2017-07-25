@@ -10,7 +10,7 @@ class ISteamUserOAuth extends AbstractInterface
      *
      * @param string $access_token OAuth2 token for which to return details
      */
-    public function GetTokenDetailsV1($access_token)
+    public function GetTokenDetailsV1(string $access_token)
     {
         return $this->_call(__METHOD__, 'GET', array('access_token' => $access_token));
     }

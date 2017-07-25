@@ -26,7 +26,7 @@ class ISteamApps extends AbstractInterface
      *
      * @param string $addr IP or IP:queryport to list
      */
-    public function GetServersAtAddressV1($addr)
+    public function GetServersAtAddressV1(string $addr)
     {
         return $this->_call(__METHOD__, 'GET', array('addr' => $addr));
     }
@@ -36,7 +36,7 @@ class ISteamApps extends AbstractInterface
      * @param uint32 $appid AppID of game
      * @param uint32 $version The installed version of the game
      */
-    public function UpToDateCheckV1($appid, $version)
+    public function UpToDateCheckV1(string $appid, string $version)
     {
         return $this->_call(__METHOD__, 'GET', array('appid' => $appid, 'version' => $version));
     }

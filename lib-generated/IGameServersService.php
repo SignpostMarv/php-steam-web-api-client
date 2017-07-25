@@ -19,7 +19,7 @@ class IGameServersService extends AbstractInterface
      * @param uint32 $appid The app to use the account for
      * @param string $memo The memo to set on the new account
      */
-    public function CreateAccountV1($appid, $memo)
+    public function CreateAccountV1(string $appid, string $memo)
     {
         return $this->_call(__METHOD__, 'POST', array('appid' => $appid, 'memo' => $memo));
     }
@@ -29,7 +29,7 @@ class IGameServersService extends AbstractInterface
      * @param uint64 $steamid The SteamID of the game server to set the memo on
      * @param string $memo The memo to set on the new account
      */
-    public function SetMemoV1($steamid, $memo)
+    public function SetMemoV1(string $steamid, string $memo)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid, 'memo' => $memo));
     }
@@ -38,7 +38,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param uint64 $steamid The SteamID of the game server to reset the login token of
      */
-    public function ResetLoginTokenV1($steamid)
+    public function ResetLoginTokenV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid));
     }
@@ -47,7 +47,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param uint64 $steamid The SteamID of the game server account to delete
      */
-    public function DeleteAccountV1($steamid)
+    public function DeleteAccountV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'POST', array('steamid' => $steamid));
     }
@@ -56,7 +56,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param uint64 $steamid The SteamID of the game server to get info on
      */
-    public function GetAccountPublicInfoV1($steamid)
+    public function GetAccountPublicInfoV1(string $steamid)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid' => $steamid));
     }
@@ -65,7 +65,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param string $login_token Login token to query
      */
-    public function QueryLoginTokenV1($login_token)
+    public function QueryLoginTokenV1(string $login_token)
     {
         return $this->_call(__METHOD__, 'GET', array('login_token' => $login_token));
     }
@@ -74,7 +74,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param string $server_ips
      */
-    public function GetServerSteamIDsByIPV1($server_ips)
+    public function GetServerSteamIDsByIPV1(string $server_ips)
     {
         return $this->_call(__METHOD__, 'GET', array('server_ips' => $server_ips));
     }
@@ -83,7 +83,7 @@ class IGameServersService extends AbstractInterface
      *
      * @param uint64 $server_steamids
      */
-    public function GetServerIPsBySteamIDV1($server_steamids)
+    public function GetServerIPsBySteamIDV1(string $server_steamids)
     {
         return $this->_call(__METHOD__, 'GET', array('server_steamids' => $server_steamids));
     }

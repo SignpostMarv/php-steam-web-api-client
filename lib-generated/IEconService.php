@@ -17,7 +17,7 @@ class IEconService extends AbstractInterface
      * @param bool $include_failed
      * @param bool $include_total If set, the total number of trades the account has participated in will be included in the response
      */
-    public function GetTradeHistoryV1($max_trades, $start_after_time, $start_after_tradeid, $navigating_back, $get_descriptions, $language, $include_failed, $include_total)
+    public function GetTradeHistoryV1(string $max_trades, string $start_after_time, string $start_after_tradeid, bool $navigating_back, bool $get_descriptions, string $language, bool $include_failed, bool $include_total)
     {
         return $this->_call(__METHOD__, 'GET', array('max_trades' => $max_trades, 'start_after_time' => $start_after_time, 'start_after_tradeid' => $start_after_tradeid, 'navigating_back' => $navigating_back, 'get_descriptions' => $get_descriptions, 'language' => $language, 'include_failed' => $include_failed, 'include_total' => $include_total));
     }
@@ -28,7 +28,7 @@ class IEconService extends AbstractInterface
      * @param bool $get_descriptions If set, the item display data for the items included in the returned trades will also be returned
      * @param string $language The language to use when loading item display data
      */
-    public function GetTradeStatusV1($tradeid, $get_descriptions, $language)
+    public function GetTradeStatusV1(string $tradeid, bool $get_descriptions, string $language)
     {
         return $this->_call(__METHOD__, 'GET', array('tradeid' => $tradeid, 'get_descriptions' => $get_descriptions, 'language' => $language));
     }
@@ -43,7 +43,7 @@ class IEconService extends AbstractInterface
      * @param bool $historical_only Indicates we should only return offers which are not active.
      * @param uint32 $time_historical_cutoff When active_only is set, offers updated since this time will also be returned
      */
-    public function GetTradeOffersV1($get_sent_offers, $get_received_offers, $get_descriptions, $language, $active_only, $historical_only, $time_historical_cutoff)
+    public function GetTradeOffersV1(bool $get_sent_offers, bool $get_received_offers, bool $get_descriptions, string $language, bool $active_only, bool $historical_only, string $time_historical_cutoff)
     {
         return $this->_call(__METHOD__, 'GET', array('get_sent_offers' => $get_sent_offers, 'get_received_offers' => $get_received_offers, 'get_descriptions' => $get_descriptions, 'language' => $language, 'active_only' => $active_only, 'historical_only' => $historical_only, 'time_historical_cutoff' => $time_historical_cutoff));
     }
@@ -53,7 +53,7 @@ class IEconService extends AbstractInterface
      * @param uint64 $tradeofferid
      * @param string $language
      */
-    public function GetTradeOfferV1($tradeofferid, $language)
+    public function GetTradeOfferV1(string $tradeofferid, string $language)
     {
         return $this->_call(__METHOD__, 'GET', array('tradeofferid' => $tradeofferid, 'language' => $language));
     }
@@ -62,7 +62,7 @@ class IEconService extends AbstractInterface
      *
      * @param uint32 $time_last_visit The time the user last visited.  If not passed, will use the time the user last visited the trade offer page.
      */
-    public function GetTradeOffersSummaryV1($time_last_visit)
+    public function GetTradeOffersSummaryV1(string $time_last_visit)
     {
         return $this->_call(__METHOD__, 'GET', array('time_last_visit' => $time_last_visit));
     }
@@ -71,7 +71,7 @@ class IEconService extends AbstractInterface
      *
      * @param uint64 $tradeofferid
      */
-    public function DeclineTradeOfferV1($tradeofferid)
+    public function DeclineTradeOfferV1(string $tradeofferid)
     {
         return $this->_call(__METHOD__, 'POST', array('tradeofferid' => $tradeofferid));
     }
@@ -80,7 +80,7 @@ class IEconService extends AbstractInterface
      *
      * @param uint64 $tradeofferid
      */
-    public function CancelTradeOfferV1($tradeofferid)
+    public function CancelTradeOfferV1(string $tradeofferid)
     {
         return $this->_call(__METHOD__, 'POST', array('tradeofferid' => $tradeofferid));
     }
@@ -90,7 +90,7 @@ class IEconService extends AbstractInterface
      * @param uint64 $steamid_target User you are trading with
      * @param string $trade_offer_access_token A special token that allows for trade offers from non-friends.
      */
-    public function GetTradeHoldDurationsV1($steamid_target, $trade_offer_access_token)
+    public function GetTradeHoldDurationsV1(string $steamid_target, string $trade_offer_access_token)
     {
         return $this->_call(__METHOD__, 'GET', array('steamid_target' => $steamid_target, 'trade_offer_access_token' => $trade_offer_access_token));
     }
