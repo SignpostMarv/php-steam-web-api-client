@@ -26,7 +26,7 @@ class InterfaceGenerator
 
         //Check for `.apikey` file in the working directory
         $composer = $event->getComposer();
-        $apiKeyFile = realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', '..', '.apikey']));
+        $apiKeyFile = realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '.apikey']));
         if (is_readable($apiKeyFile)) {
             return trim(file_get_contents($apiKeyFile));
         }

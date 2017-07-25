@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Zyberspace\\SteamWebApi\\": "lib/Zyberspace/SteamWebApi/"
+            "Zyberspace\\SteamWebApi\\": "lib/"
         }
     },
     "require": {
