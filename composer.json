@@ -23,7 +23,11 @@
             "Zyberspace\\SteamWebApi\\Interfaces\\": "lib-generated/"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "require": {
+        "php": "^7.0",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
