@@ -37,7 +37,7 @@ class InterfaceGenerator
     static public function generateAll(Event $event)
     {
         $client = new Client(static::_getApiKey($event));
-        $steamWebAPIUtil = new Interfaces\ISteamWebAPIUtil($client);
+        $steamWebAPIUtil = new ISteamWebAPIUtil($client);
 
         $interfaces = $steamWebAPIUtil->GetSupportedAPIListV1()->apilist->interfaces;
         foreach ($interfaces as $interface) {
