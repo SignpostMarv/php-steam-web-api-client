@@ -10,6 +10,12 @@ class ISteamWebAPIUtil extends AbstractInterface
      */
     public function GetSupportedAPIListV1()
     {
-        return $this->_call(__METHOD__, 'GET', array());
+        return $this->_client->call(
+            'ISteamWebAPIUtil',
+            'GetSupportedAPIList',
+            1,
+            'GET',
+            []
+        );
     }
 }
