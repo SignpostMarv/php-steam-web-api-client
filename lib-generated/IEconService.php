@@ -22,6 +22,17 @@ class IEconService extends AbstractInterface
         return $this->_call(__METHOD__, 'GET', array('max_trades' => $max_trades, 'start_after_time' => $start_after_time, 'start_after_tradeid' => $start_after_tradeid, 'navigating_back' => $navigating_back, 'get_descriptions' => $get_descriptions, 'language' => $language, 'include_failed' => $include_failed, 'include_total' => $include_total));
     }
     /**
+     * /IEconService/GetTradeStatus/v1/
+     *
+     * @param uint64 $tradeid
+     * @param bool $get_descriptions If set, the item display data for the items included in the returned trades will also be returned
+     * @param string $language The language to use when loading item display data
+     */
+    public function GetTradeStatusV1($tradeid, $get_descriptions, $language)
+    {
+        return $this->_call(__METHOD__, 'GET', array('tradeid' => $tradeid, 'get_descriptions' => $get_descriptions, 'language' => $language));
+    }
+    /**
      * /IEconService/GetTradeOffers/v1/
      *
      * @param bool $get_sent_offers Request the list of sent offers.
@@ -72,5 +83,15 @@ class IEconService extends AbstractInterface
     public function CancelTradeOfferV1($tradeofferid)
     {
         return $this->_call(__METHOD__, 'POST', array('tradeofferid' => $tradeofferid));
+    }
+    /**
+     * /IEconService/GetTradeHoldDurations/v1/
+     *
+     * @param uint64 $steamid_target User you are trading with
+     * @param string $trade_offer_access_token A special token that allows for trade offers from non-friends.
+     */
+    public function GetTradeHoldDurationsV1($steamid_target, $trade_offer_access_token)
+    {
+        return $this->_call(__METHOD__, 'GET', array('steamid_target' => $steamid_target, 'trade_offer_access_token' => $trade_offer_access_token));
     }
 }

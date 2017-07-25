@@ -80,6 +80,15 @@ class IDOTA2Match_570 extends AbstractInterface
         return $this->_call(__METHOD__, 'GET', array('start_at_team_id' => $start_at_team_id, 'teams_requested' => $teams_requested));
     }
     /**
+     * /IDOTA2Match_570/GetTopLiveEventGame/v1/
+     *
+     * @param int32 $partner Which partner's games to use.
+     */
+    public function GetTopLiveEventGameV1($partner)
+    {
+        return $this->_call(__METHOD__, 'GET', array('partner' => $partner));
+    }
+    /**
      * /IDOTA2Match_570/GetTopLiveGame/v1/
      *
      * @param int32 $partner Which partner's games to use.
