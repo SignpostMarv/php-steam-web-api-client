@@ -19,7 +19,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Zyberspace\\SteamWebApi\\": "lib/"
+            "Zyberspace\\SteamWebApi\\": "lib/",
+            "Zyberspace\\SteamWebApi\\Interfaces\\": "lib-generated/"
         }
     },
     "require": {

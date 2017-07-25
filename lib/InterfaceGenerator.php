@@ -133,7 +133,7 @@ class InterfaceGenerator
         $node = $this->generateNode();
 
         $prettyPrinter = new PrettyPrinter\Standard();
-        file_put_contents(__DIR__ . '/Interfaces/' . $this->_interfaceApiDefinition->name . '.php',
+        file_put_contents(dirname(__DIR__) . '/lib-generated/' . $this->_interfaceApiDefinition->name . '.php',
             $prettyPrinter->prettyPrintFile(array($node)) . PHP_EOL);
 
         echo $this->_interfaceApiDefinition->name . PHP_EOL;
